@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Franklin Frank</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
          body{
             background-color:rgba(0, 0, 0, 0.3);
             overflow:hidden;
+            /* background-image: url("bendigo.jpg");
+            background-size:cover;
+            background-position:top;
+            background-repeat:no-repeat;
+            background-image:linear-gradient(rgba(0,0,0,0,0.5)); */
         }
         .icon{
             width:22px; 
@@ -15,29 +23,11 @@
             margin-top:3px;
             border-radius:15px;
         }
-        .header{
+        .head{
             position:absolute;
             right:30px;
-            top:20px;
-            z-index: 99;
-        }
-        .links{
-            position:absolute;
-            top:20%;
-            right:2%;
-            transform:translate(-50%, -50%);
-            display:flex;
-            flex-direction: column;
-        }
-        .links > div:hover{
-            color:#fff;
-        }
-        .links > div{
-            /* flex-basis: 50px; */
-            font-size:15px;
-            padding:1em;
-            font-family:tahoma;
-            color:#000;
+            top:12px;
+            z-index: 999;
         }
         .circle{
             position: absolute;
@@ -65,190 +55,708 @@
             border:4px solid rgb(119, 118, 51);
             border-radius:50%;
         }
-        .rapper{
+        .wrapper{
             position:absolute;
-            top:70%;
+            top:50%;
             left:50%;
             transform: translate(-50%, -50%);
-            display:flex;
-            flex-direction: column;
-            justify-content:space-between;
-        }
-        .rapper > div{
-            background-color:rgba(210, 216, 214, 0.945);
-            padding:1em;
-            margin:2px;
-            border-radius:10px;
-            /* transform: rotate(4deg) */
+            display:none;
+            flex-direction:row;
+            background-color:transparent;
         }
         .rapper1{
-            position:absolute;
-            top:70%;
-            left:50%;
-            transform: translate(-50%, -50%);
             display:flex;
             flex-direction: column;
             justify-content:space-between;
         }
         .rapper1 > div{
             background-color:rgba(210, 216, 214, 0.945);
-            padding:1em;
+            padding:10px;
             margin:2px;
             border-radius:10px;
-            /* transform: rotate(4deg) */
+           
         }
-        #hardCover{
-            background-color: rgba(0, 0, 0, 0.2);
+        .rapper2{
+            display:flex;
+            flex-direction: column;
+            justify-content:space-between;
         }
-        @keyframes book{
-            from{transform: rotateY(0deg)}
-            to{transform: rotateY(180deg); color:transparent}
+        .rapper2 > div{
+            background-color:rgba(210, 216, 214, 0.945);
+            padding:10px;
+            margin:2px;
+            border-radius:10px;
         }
-        @media(min-width: 992px){
-            .rapper{
-                position:absolute;
-                top:60%;
-                left:50%;
-                transform: translate(-50%, -50%);
-                display:flex;
-                flex-direction: row;
-                z-index:90;
-            
-            }
-            .rapper > div{
-                padding:2em;
-            }
-            #sideCover{
-                transform-origin: left;
-                animation:book 2s 3s ease 4 forwards;
-            }
-            /*This is the fixed book*/
+    
+ 
+       #svg8{
+           background-color:transparent;
+           position:absolute;
+           left:50%;
+           top:80%;
+           transform: translate(-50%, -50%);
+           transform:scale();
+       }
+      .header{
+          width:100%;
+          height:50px;
+          position:absolute;
+          left:0;
+          top:0;
+          background-color:#368BC1;
+          z-index:999;
+      }
+      .arrows-left-middle{
+          position:absolute;
+          left:0;
+          top:50%;
+          transform: translate(-50%, -50%);
+          width:130px;
+          height:6px;
+          background-color:transparent;
+          z-index:999;
+          border-radius:5px;
+      }
+      .arrows-left-middle::before{
+          content: '';
+          position:absolute;
+          left:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:right;
+          transform: rotate(45deg);
+          border-radius:5px;
+      }
+      .arrows-left-middle::after{
+          content: '';
+          position:absolute;
+          left:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:right;
+          transform: rotate(325deg);
+          border-radius:5px;
+      }
+      .arrows-left-top{
+          position:absolute;
+          left:0;
+          top:50px;
+          transform: translate(-50%, -50%);
+          width:130px;
+          height:6px;
+          background-color:transparent;
+          z-index:999;
+          border-radius:5px;
+          transform-origin:left;
+          transform: rotate(45deg);
+      }
+      .arrows-left-top::after{
+          content: '';
+          position:absolute;
+          left:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:right;
+          transform: rotate(325deg);
+          border-radius:5px;
+      }
+      .arrows-left-top::before{
+          content: '';
+          position:absolute;
+          left:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:right;
+          transform: rotate(45deg);
+          border-radius:5px;
+      }
+    
+      .arrows-left-bottom{
+          position:absolute;
+          left:0;
+          bottom:50px;
+          transform: translate(-50%, -50%);
+          width:130px;
+          height:6px;
+          background-color:transparent;
+          z-index:999;
+          border-radius:5px;
+          transform-origin:left;
+          transform: rotate(325deg);
+      }
+      .arrows-left-bottom::after{
+          content: '';
+          position:absolute;
+          left:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:right;
+          transform: rotate(325deg);
+          border-radius:5px;
+      }
+      .arrows-left-bottom::before{
+          content: '';
+          position:absolute;
+          left:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:right;
+          transform: rotate(45deg);
+          border-radius:5px;
+      }
+/*Start to style the Arrows for the right part of mt github page*/
+.arrows-right-middle{
+          position:absolute;
+          left:100%;
+          top:50%;
+          transform: translate(-50%, -50%);
+          width:130px;
+          height:6px;
+          background-color:transparent;
+          z-index:999;
+          border-radius:5px;
+      }
+      .arrows-right-middle::before{
+          content: '';
+          position:absolute;
+          right:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:left;
+          transform: rotate(45deg);
+          border-radius:5px;
+      }
+      .arrows-right-middle::after{
+          content: '';
+          position:absolute;
+          right:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:left;
+          transform: rotate(325deg);
+          border-radius:5px;
+      }
+      .arrows-right-top{
+          position:absolute;
+          right:0%;
+          top:50px;
+          transform: translate(-50%, -50%);
+          width:130px;
+          height:6px;
+          background-color:transparent;
+          z-index:999;
+          border-radius:5px;
+          transform-origin:right;
+          transform: rotate(-45deg);
+      }
+      .arrows-right-top::after{
+          content: '';
+          position:absolute;
+          right:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:left;
+          transform: rotate(325deg);
+          border-radius:5px;
+      }
+      .arrows-right-top::before{
+          content: '';
+          position:absolute;
+          right:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:left;
+          transform: rotate(45deg);
+          border-radius:5px;
+      }
+    
+      .arrows-right-bottom{
+          position:absolute;
+          right:0%;
+          bottom:50px;
+          transform: translate(-50%, -50%);
+          width:130px;
+          height:6px;
+          background-color:transparent;
+          z-index:999;
+          border-radius:5px;
+          transform-origin:right;
+          transform: rotate(45deg);
+      }
+      .arrows-right-bottom::after{
+          content: '';
+          position:absolute;
+          right:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:left;
+          transform: rotate(325deg);
+          border-radius:5px;
+      }
+      .arrows-right-bottom::before{
+          content: '';
+          position:absolute;
+          right:79%;
+          width:30px;
+          height:5px;
+          background-color:inherit;
+          transform-origin:left;
+          transform: rotate(45deg);
+          border-radius:5px;
+      }
+/*Style for the left and right Arrow covers just like panda cover LOL (:;*/   
+      .arrows-left{
+          position:absolute;
+          left:0;
+          background-color:rgba(12, 16, 17, 0.219);
+          width:50%;
+          height:100%;
+          transition:0.7s;
+      }
+      .arrows-right{
+          position:absolute;
+          right:0;
+          background-color:rgba(12, 16, 17, 0.219);
+          width:50%;
+          height:100%;
+          transition:0.7s;
+      }
+      .fotter{
+          position:absolute;
+          left:0;
+          bottom:0;
+          background-color:#ddd;
+          z-index:999;
+          text-align:center;
+          width:100%;
+          height:10px;
+          padding:1em;
+      }
+      .cover{
+        text-align:center;
+        font-family:monospace;
+      }
+      .cover:hover{
+          transition:0.5s ease;
+          background-color:#368BC1;
+          color:#ddd;
+          opacity:0.8;
+         
+      }
+      #home{
+          background-color:#368BC1;
+      }
+      
+      .about{
+        display:none;
+      	width:50%;
+      	position: absolute;
+      	top: 50%;
+      	left:50%;
+      	transform:translate(-50%, -50%);
+      	z-index:999;
+      	text-align: center;
+      	font-family: cursive;
+      	font-size: 10px;
+      	box-shadow:1px 1px 2px 1px #000;
+      	padding:1em;
+      	border-top-right-radius: 15px;
+      	border-bottom-left-radius: 15px;
+      }
+      .myimg > img{
+      	width: 100px;
+      	height:100px;
+      	border-radius: 50%;
+      }
+      #projects{
+          flex-basis:100%;
+      }
+      #about{
+      	
+      }
+       @media(min-width: 500px){
+       		.about{
+       			font-size:20px;
+       		}
+       }
+      @media(min-width: 992px){
             .rapper1{
-                position:absolute;
-                top:60%;
-                left:50%;
-                transform: translate(-50%, -50%);
-                display:flex;
-                flex-direction: row;
-                z-index:89;
-            
+               
             }
             .rapper1 > div{
                 padding:2em;
             }
-            #sideCover1{
-                transform-origin: left;
-                /* animation:book 3s ease 1 forwards; */
+            .rapper2{
+              
+            }
+            .rapper2 > div{
+                padding:2em;
+            }
+            .about{
+            	padding:2em;
             }
         }
     </style>
 </head>
+    <body>
+        <div class="header"></div>
+       
+        <div class="arrower">
+            <div class='arrows-left'>
+                <div class="arrows-left-middle"></div>
+                <div class="arrows-left-top"></div>
+                <div class="arrows-left-bottom"></div>
+            </div>
+            <div class='arrows-right'>
+                    <div class="arrows-right-middle"></div>
+                    <div class="arrows-right-top"></div>
+                    <div class="arrows-right-bottom"></div>
+                </div>
+        </div>
+        <div class='about'>
+        	<div class='myimg'>
+        		<img src="bendigo.jpg">
+        	</div>
+        	<div class='biography'>
+        		My name is franklin frank, i am a full-stack javaScript developer.<br>
+        		I am from Edo state, Nigeria. I started programming Two years ago when i was just 17ys.<br>
+        		I've done some pretty cool project with html, css(bootstrap) and javaScript(node.js and jQuery)
+        	</div>
+        </div>
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <svg
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        width="210mm"
+        height="297mm"
+        viewBox="0 0 210 297"
+        version="1.1"
+        id="svg8"
+        sodipodi:docname="portfolio.svg"
+        inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+        <defs
+            id="defs2" />
+        <sodipodi:namedview
+            id="base"
+            pagecolor="#ffffff"
+            bordercolor="#666666"
+            borderopacity="1.0"
+            inkscape:pageopacity="0.0"
+            inkscape:pageshadow="2"
+            inkscape:zoom="0.45254834"
+            inkscape:cx="416.00638"
+            inkscape:cy="309.18706"
+            inkscape:document-units="mm"
+            inkscape:current-layer="layer1"
+            showgrid="false"
+            inkscape:snap-text-baseline="true"
+            inkscape:window-width="1366"
+            inkscape:window-height="705"
+            inkscape:window-x="-8"
+            inkscape:window-y="-8"
+            inkscape:window-maximized="1"
+            showguides="true">
+            <inkscape:grid
+            type="xygrid"
+            id="grid823" />
+        </sodipodi:namedview>
+        <metadata
+            id="metadata5">
+            <rdf:RDF>
+            <cc:Work
+                rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            </cc:Work>
+            </rdf:RDF>
+        </metadata>
+        <g
+            inkscape:label="Layer 1"
+            inkscape:groupmode="layer"
+            id="layer1">
+            <path
+            style="fill:none;stroke:#90bec3;stroke-width:2.64583333;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.78723407;stroke-miterlimit:4;stroke-dasharray:none"
+            d="m 39.6875,43 c 47.770762,-10.314157 88.51021,13.811946 129.64583,10e-7"
+            id="path825"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="cc" />
+            <path
+            sodipodi:nodetypes="cc"
+            inkscape:connector-curvature="0"
+            id="path829"
+            d="m 39.6875,59.933344 c 47.770762,-10.314157 88.51021,13.811946 129.64583,1e-6"
+            style="fill:none;stroke:#90bec3;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.78723408" />
+            <path
+            style="fill:#0b0505;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.36702126"
+            d="m 39.6875,43.000001 v 15.875"
+            id="path831"
+            inkscape:connector-curvature="0" />
+            <path
+            inkscape:connector-curvature="0"
+            id="path833"
+            d="m 168.80464,43.000001 v 15.875"
+            style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+            <path
+            style="fill:#0b0505;fill-opacity:0.36702127;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+            d="m 54.504167,58.875 -1.587501,7.9375 -6.879166,-2.116667 -6.35,-3.174999"
+            id="path847"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="cccc" />
+            <path
+            sodipodi:nodetypes="cccc"
+            inkscape:connector-curvature="0"
+            id="path853"
+            d="m 154.51705,45.116653 1.58751,-7.9375 6.87921,2.11667 6.35003,3.175"
+            style="fill:#0b0505;fill-opacity:0.36702127;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+            style="fill:none;stroke:#339fa3;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.45744701"
+            d="M 52.916666,66.8125 37.041667,65.225 29.104166,66.8125"
+            id="path855"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="ccc" />
+            <path
+            sodipodi:nodetypes="ccc"
+            inkscape:connector-curvature="0"
+            id="path857"
+            d="m 156.10417,37.708333 15.875,1.5875 7.9375,-1.5875"
+            style="fill:none;stroke:#339fa3;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.45744707" />
+            <path
+            style="fill:none;stroke:#64c4ce;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.59574465"
+            d="M 39.6875,48.291667 33.562086,47.845875 29.104166,49.35"
+            id="path859"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="ccc" />
+            <path
+            sodipodi:nodetypes="ccc"
+            inkscape:connector-curvature="0"
+            id="path861"
+            d="m 168.80416,55.783375 6.12542,0.44579 4.45792,-1.50412"
+            style="fill:none;stroke:#64c4ce;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.59574465" />
+            <path
+            style="fill:#0b0505;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.36702126;stroke-miterlimit:4;stroke-dasharray:none"
+            d="m 29.633333,50.408333 0.579931,1.594811 1.007569,1.580189 1.322917,2.645834 0,1.852083 -0.264583,0.79375 -1.852084,2.645833 -1.322917,3.968751 7.9375,-1.5875 8.995833,0.79375 -6.349999,-3.175 v -11.90625 l -5.820834,-0.529167 z"
+            id="path863"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="cccccccccccccc" />
+            <path
+            sodipodi:nodetypes="cccccccccccccc"
+            inkscape:connector-curvature="0"
+            id="path873"
+            d="m 178.85828,53.847916 -0.57993,-1.59481 -1.00757,-1.58019 -1.32292,-2.64583 v -1.85208 l 0.26458,-0.79375 1.85209,-2.64584 1.32291,-3.96875 -7.9375,1.5875 -8.99583,-0.79375 6.35,3.175 v 11.90625 l 5.82083,0.52917 z"
+            style="fill:#0b0505;fill-opacity:0.36702127;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+            style="fill:#0b0505;fill-opacity:0.36702127;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            d="m 154.51705,45.116653 1.58751,-7.9375 6.87921,2.11667 6.35003,3.175"
+            id="path875"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="cccc" />
+            <flowRoot
+            xml:space="preserve"
+            id="flowRoot895"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Andalus;-inkscape-font-specification:'Andalus, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+            transform="matrix(0.26346709,0.02427822,-0.02427822,0.26346709,36.911491,-39.767261)"><flowRegion
+                id="flowRegion897"
+                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:Andalus;-inkscape-font-specification:'Andalus, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"><rect
+                id="rect899"
+                width="490"
+                height="50"
+                x="150"
+                y="302.51968"
+                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:Andalus;-inkscape-font-specification:'Andalus, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
+                id="flowPara901">FRANKLIN FRANK</flowPara></flowRoot>    <path
+            sodipodi:nodetypes="cccc"
+            inkscape:connector-curvature="0"
+            id="path903"
+            d="m 54.504167,58.875 -1.587501,7.9375 -6.879166,-2.116667 -6.35,-3.174999"
+            style="fill:#0b0505;fill-opacity:0.36702127;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+            <flowRoot
+            xml:space="preserve"
+            id="flowRoot917"
+            style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+                id="flowRegion919"><rect
+                id="rect921"
+                width="490"
+                height="50"
+                x="-40"
+                y="-117.48032" /></flowRegion><flowPara
+                id="flowPara923" /></flowRoot>  </g>
+        </svg>
+        <canvas id="follow"></canvas>
+        <!-- <div class="clock">
+            <div class="circle"><img src="bendigo.jpg" alt="Not found"></div>
+        </div> -->
+        <div class="head">
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+        </div>
+       
+        <div class='wrapper'>
+            <div class="rapper1">
+                <div class="cover" id='home'>
+                    <h1 class='home'>Home</h1>
+                </div>
+                <div class="cover">
+                    <h1 class='contant'>Contacts</h1>
+                </div>
+            </div>
+            <div class="rapper2">
+                <div class="cover" id='about'>
+                    <h1>About</h1>
+                </div>
+                <div class="cover" id='projects'>
+                    <h1 class='projects'>Projects</h1>
+                    <div class="front-back" style="display: none;">
+	                    <div class='front'>Front </div>
+	                    <div class='back'>Back </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class='rapper2'>
+                    
+            </div> -->
+        </div>
+        <div class="fotter">THis is the Fotter</div>
+        <script>
+            var canvas = document.getElementById('follow');
+            var c = canvas.getContext('2d');
+            //console.log(c);
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
+            window.addEventListener('resize',function(){
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                init();
+
+            })
+            //ooo my almighty classass
+            var mouse = {
+                x:undefined,
+                y:undefined
+            }
+
+            window.addEventListener('mousemove',function(event){
+                mouse.x = event.x;
+                mouse.y = event.y;
+                init();
+                //playPauseUpdate();
+            })
+
+            // here the programming begeings
+
+            function Circle(x, y, r, dr){
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.dr = dr;
+                
+                this.draw = function(){
+                    c.beginPath();
+                    c.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+                    c.fillStyle = 'rgba(0,0,0,0.7)';
+                    c.fill();
+                }
+                
+                
+                this.update = function(){
+                    this.draw();
+                }
+                
+            }
+            var circleArray = [];
+            function init(){
+                circleArray =[];
+
+                for(i=0;i<1;i++){
+                    var r = 20,
+                        dr = 0.5;
+                        circleArray.push(new Circle(mouse.x,mouse.y,r,dr));
+                }
+            }
+            // verry impotant!!
+            init();
+
+
+            function animate(){
+                requestAnimationFrame(animate);
+
+
+                c.clearRect(0,0,innerWidth,innerHeight);
+                for(i=0;i<circleArray.length;i++){
+                    circleArray[i].update();
+                }
+            }
+            animate();
+            $('document').ready(function(){
+
+            	// Make all my usefull query animation here
+
+            	function slindIn(){
+            		$(".arrows-left").css({"width":"0px",});
+                    $(".arrows-left-middle").css({"width":"0px","transition":"1s", "backgroundColor":"transparent"});
+                    $(".arrows-left-top").css({"width":"0px","transition":"1s", "backgroundColor":"transparent"});
+                    $(".arrows-left-bottom").css({"width":"0px","transition":"1s", "backgroundColor":"transparent"});
+                    // Just ive an indicator here!!
+                    $(".arrows-right").css({"width":"0px",});
+                    $(".arrows-right-middle").css({"width":"0px","transition":"1s", "backgroundColor":"transparent"});
+                    $(".arrows-right-top").css({"width":"0px","transition":"1s", "backgroundColor":"transparent"});
+                    $(".arrows-right-bottom").css({"width":"0px","transition":"1s", "backgroundColor":"transparent"});
+                    setTimeout(function(){
+                        $(".arrows-left").css({"width":"50%",});
+                        $(".arrows-left-middle").css({"width":"130px","transition":"0.8s", "backgroundColor":"#368BC1"});
+                        $(".arrows-left-top").css({"width":"130px","transition":"0.8s", "backgroundColor":"#368BC1"});
+                        $(".arrows-left-bottom").css({"width":"130px","transition":"0.8s", "backgroundColor":"#368BC1"});
+                    
+                        // Let they be an indicator also incase i forget 
+                        $(".arrows-right").css({"width":"50%",});
+                        $(".arrows-right-middle").css({"width":"130px","transition":"0.8s", "backgroundColor":"#368BC1"});
+                        $(".arrows-right-top").css({"width":"130px","transition":"0.8s", "backgroundColor":"#368BC1"});
+                        $(".arrows-right-bottom").css({"width":"130px","transition":"0.8s", "backgroundColor":"#368BC1"});
+                        //$("svg").hide(1000);
+                        
+                    }, 1000);
+            	}
+
+
+                $(".head").on('click', function(){
+                	slindIn();
+                	$(".about").hide(1000);
+                    setTimeout(function(){
+                        $(".wrapper").css({"display":"flex"});
+                    },1000);
+                });
+                $("#about").on('click', function(){
+               		$(".wrapper").hide();
+                	$(".about").show(1000);
+                	slindIn();
+                });
+                $("#projects").mouseenter(function(){
+                	$(".projects").hide(1000);
+                	$(".front-back").show(1000);
+                });
+                $("#projects").mouseremove(function(){
+                	$(".projects").show(1000);
+                	$(".front-back").hide(1000);
+                });
+            });
+        </script>
+    </body>
 </html>
-
-<body></body><canvas id="follow"></canvas>
-<div class="clock">
-    <div class="circle"><img src="/images/face.jpg" alt="Not found"></div>
-</div>
-<div class="header">
-    <div class="icon"></div>
-    <div class="icon"></div>
-    <div class="icon"></div>
-</div>
-<div class="links">
-    <div class="home">Home</div>
-    <div class="home">About</div>
-    <div class="home">Contant</div>
-    <div class="home">Projects</div>
-</div>
-<div class="rapper">
-    <div class="cover" id="hardCover">
-        <h1>Biography</h1>
-        <p>This the the body of the card or what ever u call it!</p>
-    </div>
-    <div class="cover" id="sideCover">
-        <h1>cover</h1>
-        <p>This the the body of the card or what ever u call it!</p>
-    </div>
-</div>
-<div class="rapper1">
-    <div class="cover" style="color:transparent;">
-        <h1>cover</h1>
-        <p>This the the body of the card or what ever u call it!</p>
-    </div>
-    <div class="cover" id="sideCover1">
-        <h1>Franklin frank</h1>
-        <p>Web developer, Designer, and Enterprenuer</p>
-    </div>
-</div>
-<script>
-    var canvas = document.getElementById('follow');
-    var c = canvas.getContext('2d');
-    //console.log(c);
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    window.addEventListener('resize',function(){
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        init();
-
-    })
-    //ooo my almighty classass
-    var mouse = {
-        x:undefined,
-        y:undefined
-    }
-
-    window.addEventListener('mousemove',function(event){
-        mouse.x = event.x;
-        mouse.y = event.y;
-        init();
-        //playPauseUpdate();
-    })
-
-    // here the programming begeings
-
-    function Circle(x, y, r, dr){
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.dr = dr;
-        
-        this.draw = function(){
-            c.beginPath();
-            c.arc(this.x,this.y,this.r,0,Math.PI*2,false);
-            c.fillStyle = 'rgba(0,0,0,0.7)';
-            c.fill();
-        }
-        
-        
-        this.update = function(){
-            this.draw();
-        }
-        
-    }
-    var circleArray = [];
-    function init(){
-        circleArray =[];
-
-        for(i=0;i<1;i++){
-            var r = 20,
-                dr = 0.5;
-                circleArray.push(new Circle(mouse.x,mouse.y,r,dr));
-        }
-    }
-    // verry impotant!!
-    init();
-
-
-    function animate(){
-        requestAnimationFrame(animate);
-        c.clearRect(0,0,innerWidth,innerHeight);
-        for(i=0;i<circleArray.length;i++){
-            circleArray[i].update();
-        }
-    }
-    animate();
-
-</script>
